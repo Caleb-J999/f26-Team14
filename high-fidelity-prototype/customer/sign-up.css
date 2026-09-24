@@ -1,0 +1,368 @@
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #f5f5f5;
+
+    color: #222;
+}
+
+
+/* HEADER */
+
+header {
+    background-color: white;
+
+    padding: 20px 60px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+
+    color: #123d2b;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+
+    color: #222;
+}
+
+nav a:hover {
+    color: #2f8f4e;
+}
+
+
+/* SIGN UP BUTTON */
+
+.signup-button {
+    background-color: #2f8f4e;
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 3px;
+}
+
+.signup-button:hover {
+    background-color: #267640;
+
+    color: white;
+}
+
+
+/* HERO */
+
+.hero {
+    background-color: #123d2b;
+
+    color: white;
+
+    padding: 60px;
+}
+
+.hero-text {
+    max-width: 750px;
+}
+
+.hero h2 {
+    margin-top: 0;
+
+    margin-bottom: 12px;
+
+    font-size: 36px;
+}
+
+.hero p {
+    margin-bottom: 0;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+/* SIGN UP CONTAINER */
+
+.signup-container {
+    display: flex;
+
+    justify-content: center;
+
+    padding: 50px 20px;
+}
+
+
+/* SIGN UP CARD */
+
+.signup-card {
+    width: 100%;
+
+    max-width: 600px;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+
+    padding: 35px;
+}
+
+.signup-card h2 {
+    text-align: center;
+
+    margin-top: 0;
+
+    margin-bottom: 10px;
+
+    font-size: 28px;
+}
+
+.signup-description {
+    text-align: center;
+
+    color: #666;
+
+    margin-bottom: 30px;
+}
+
+
+/* FORM */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group > label {
+    display: block;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 3px;
+
+    font-size: 15px;
+}
+
+
+/* FIRST AND LAST NAME */
+
+.name-row {
+    display: flex;
+
+    gap: 20px;
+}
+
+.name-row .form-group {
+    width: 50%;
+}
+
+
+/* ACCOUNT TYPE */
+
+.account-options {
+    display: flex;
+
+    gap: 15px;
+}
+
+.account-option {
+    width: 50%;
+}
+
+.account-option input {
+    display: none;
+}
+
+.account-option span {
+    display: block;
+
+    text-align: center;
+
+    border: 1px solid #2f8f4e;
+
+    color: #2f8f4e;
+
+    padding: 13px;
+
+    border-radius: 3px;
+
+    cursor: pointer;
+}
+
+.account-option span:hover {
+    background-color: #edf5ef;
+}
+
+.account-option input:checked + span {
+    background-color: #2f8f4e;
+
+    color: white;
+}
+
+
+/* TERMS */
+
+.terms {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+
+    font-size: 14px;
+}
+
+
+/* CREATE ACCOUNT BUTTON */
+
+.create-account-button {
+    width: 100%;
+
+    padding: 14px;
+
+    background-color: #2f8f4e;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 3px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.create-account-button:hover {
+    background-color: #267640;
+}
+
+
+/* LOGIN */
+
+.login-text {
+    text-align: center;
+
+    margin-top: 22px;
+
+    margin-bottom: 0;
+}
+
+.login-text a {
+    color: #2f8f4e;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #123d2b;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 30px;
+}
+
+
+/* TABLET / MOBILE */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 45px 30px;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .name-row {
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+    .name-row .form-group {
+        width: 100%;
+    }
+
+    .account-options {
+        flex-direction: column;
+    }
+
+    .account-option {
+        width: 100%;
+    }
+
+    .signup-card {
+        padding: 25px;
+    }
+
+}

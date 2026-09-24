@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudioShare - Check Availability</title>
+
+    <link rel="stylesheet" href="availability.css">
+</head>
+
+<style>
+    .space-image {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+}
+
+.space-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+</style>
+
+<body>
+
+    <header>
+
+        <h1>StudioShare</h1>
+
+        <nav>
+            <a href="../provider/index.html">Home</a>
+            <a href="search-spaces.html">Browse Spaces</a>
+            <a href="../provider/create-listing.html">List Your Space</a>
+            <a class="signup-button" href="signup.html">Sign Up</a>
+        </nav>
+
+    </header>
+
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h2>Check Space Availability</h2>
+
+            <p>
+                Find an available date and time before booking your creative space.
+            </p>
+
+        </div>
+
+    </section>
+
+    
+            <style>     
+            .hero {
+            background-color: #123d2b;
+            color: white;
+            padding: 70px 60px;
+            background-image: url("../images/studio2.jpg");
+        }
+        </style>
+
+    <main class="availability-container">
+
+        <h2>Check Availability</h2>
+
+        <p class="page-description">
+            Select a date and booking length to see available time slots.
+        </p>
+
+
+        <div class="availability-layout">
+
+
+            <section class="space-card">
+
+<div class="space-image">
+    <img src="../images/CreativeStudio.jpg" alt="Downtown Creative Studio">
+</div>
+
+
+                <div class="space-information">
+
+                    <h3>Downtown Creative Studio</h3>
+
+                    <p class="location">
+                        Greensboro, NC
+                    </p>
+
+                    <p>
+                        A flexible creative studio designed for photography,
+                        art projects, music sessions, rehearsals, and other
+                        creative work.
+                    </p>
+
+
+                    <div class="space-details">
+
+                        <p>
+                            <strong>Capacity:</strong>
+                            Up to 10 people
+                        </p>
+
+                        <p>
+                            <strong>Equipment:</strong>
+                            Lighting, speakers, tables, chairs
+                        </p>
+
+                        <p>
+                            <strong>Price:</strong>
+                            $45 per hour
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="availability-card">
+
+                <h3>Find Available Times</h3>
+
+
+                <div class="form-group">
+
+                    <label for="date">
+                        Select Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="date"
+                        name="date"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="duration">
+                        Booking Length
+                    </label>
+
+                    <select id="duration" name="duration">
+
+                        <option value="1">
+                            1 Hour
+                        </option>
+
+                        <option value="2">
+                            2 Hours
+                        </option>
+
+                        <option value="3">
+                            3 Hours
+                        </option>
+
+                        <option value="4">
+                            4 Hours
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button class="check-button">
+                    Check Availability
+                </button>
+
+
+                <div class="availability-results">
+
+                    <h3>Available Times</h3>
+
+                    <p class="result-text">
+                        These time slots are currently available.
+                    </p>
+
+
+                    <div class="time-list">
+
+
+                        <div class="time-row">
+
+                            <div>
+                                <strong>9:00 AM - 10:00 AM</strong>
+                                <p>Available</p>
+                            </div>
+
+                            <span class="available">
+                                Available
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="time-row">
+
+                            <div>
+                                <strong>10:00 AM - 11:00 AM</strong>
+                                <p>Available</p>
+                            </div>
+
+                            <span class="available">
+                                Available
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="time-row unavailable-row">
+
+                            <div>
+                                <strong>11:00 AM - 12:00 PM</strong>
+                                <p>This time has already been booked.</p>
+                            </div>
+
+                            <span class="unavailable">
+                                Unavailable
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="time-row">
+
+                            <div>
+                                <strong>1:00 PM - 2:00 PM</strong>
+                                <p>Available</p>
+                            </div>
+
+                            <span class="available">
+                                Available
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="time-row">
+
+                            <div>
+                                <strong>2:00 PM - 3:00 PM</strong>
+                                <p>Available</p>
+                            </div>
+
+                            <span class="available">
+                                Available
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="time-row unavailable-row">
+
+                            <div>
+                                <strong>3:00 PM - 4:00 PM</strong>
+                                <p>This time has already been booked.</p>
+                            </div>
+
+                            <span class="unavailable">
+                                Unavailable
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        class="booking-button"
+                        href="book-a-time.html"
+                    >
+                        Book an Available Time
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            StudioShare - Find your space, create your vision.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
