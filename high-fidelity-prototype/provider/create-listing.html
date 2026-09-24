@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudioShare - Create Listing</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        header {
+            background-color: white;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #222;
+        }
+
+        .signup-button {
+            background-color: #2f8f4e;
+            color: white;
+            padding: 10px 18px;
+        }
+
+        .hero {
+            background-color: #123d2b;
+            color: white;
+            padding: 55px 60px;
+        }
+
+        .hero h2 {
+            margin: 0 0 10px 0;
+            font-size: 34px;
+        }
+
+        .form-container {
+            max-width: 750px;
+            margin: 45px auto;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 35px;
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+        }
+
+        button,
+        .back-button {
+            padding: 11px 20px;
+            border: none;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #2f8f4e;
+            color: white;
+        }
+
+        .back-button {
+            background-color: #e4e4e4;
+            color: #222;
+        }
+
+        footer {
+            background-color: #123d2b;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>StudioShare</h1>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../index.html">Browse Spaces</a>
+            <a href="../index.html">How It Works</a>
+            <a href="create-listing.html">List Your Space</a>
+            <a class="signup-button" href="../index.html">Sign Up</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>List Your Creative Space</h2>
+        <p>Create a new listing for customers to discover and book.</p>
+    </section>
+
+    <main class="form-container">
+
+        <h2>Create Listing</h2>
+
+        <form>
+
+            <label for="space-name">Space Name</label>
+            <input
+                type="text"
+                id="space-name"
+                name="space-name"
+                placeholder="Example: Downtown Recording Studio"
+            >
+
+            <label for="space-type">Space Type</label>
+            <select id="space-type" name="space-type">
+                <option>Select a space type</option>
+                <option>Music Studio</option>
+                <option>Rehearsal Room</option>
+                <option>Photo Studio</option>
+                <option>Maker Space</option>
+                <option>Art Studio</option>
+            </select>
+
+            <label for="location">Location</label>
+            <input
+                type="text"
+                id="location"
+                name="location"
+                placeholder="Example: Greensboro, NC"
+            >
+
+            <label for="availability">Availability</label>
+            <input
+                type="text"
+                id="availability"
+                name="availability"
+                placeholder="Example: Monday - Friday, 9 AM - 6 PM"
+            >
+
+            <label for="equipment">Equipment Included</label>
+            <input
+                type="text"
+                id="equipment"
+                name="equipment"
+                placeholder="Example: Microphones, speakers, mixing equipment"
+            >
+
+            <label for="description">Description</label>
+            <textarea
+                id="description"
+                name="description"
+                rows="5"
+                placeholder="Describe your creative space..."
+            ></textarea>
+
+            <button type="button">Create Listing</button>
+
+            <a class="back-button" href="index.html">
+                Back to Dashboard
+            </a>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p>StudioShare - Find your space, create your vision.</p>
+    </footer>
+
+</body>
+</html>

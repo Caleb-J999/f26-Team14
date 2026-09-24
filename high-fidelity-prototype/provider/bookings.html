@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudioShare - Manage Bookings</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        header {
+            background-color: white;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #222;
+        }
+
+        .signup-button {
+            background-color: #2f8f4e;
+            color: white;
+            padding: 10px 18px;
+        }
+
+        .hero {
+            background-color: #123d2b;
+            color: white;
+            padding: 55px 60px;
+        }
+
+        .hero h2 {
+            margin: 0 0 10px 0;
+            font-size: 34px;
+        }
+
+        .bookings-container {
+            max-width: 900px;
+            margin: 45px auto;
+            padding: 0 20px;
+        }
+
+        .booking-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .booking-card h3 {
+            margin-top: 0;
+        }
+
+        .status {
+            font-weight: bold;
+            color: #2f8f4e;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 18px;
+            background-color: #2f8f4e;
+            color: white;
+            text-decoration: none;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 18px;
+            background-color: #e4e4e4;
+            color: #222;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #123d2b;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>StudioShare</h1>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../index.html">Browse Spaces</a>
+            <a href="../index.html">How It Works</a>
+            <a href="create-listing.html">List Your Space</a>
+            <a class="signup-button" href="../index.html">Sign Up</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Manage Bookings</h2>
+        <p>View reservations for your creative spaces.</p>
+    </section>
+
+    <main class="bookings-container">
+
+        <div class="booking-card">
+            <h3>Downtown Recording Studio</h3>
+            <p><strong>Customer:</strong> Jordan Lee</p>
+            <p><strong>Date:</strong> September 28, 2026</p>
+            <p><strong>Time:</strong> 2:00 PM - 4:00 PM</p>
+            <p><strong>Status:</strong> <span class="status">Confirmed</span></p>
+            <a class="button" href="#">View Booking</a>
+        </div>
+
+        <div class="booking-card">
+            <h3>Downtown Recording Studio</h3>
+            <p><strong>Customer:</strong> Maya Chen</p>
+            <p><strong>Date:</strong> October 2, 2026</p>
+            <p><strong>Time:</strong> 11:00 AM - 1:00 PM</p>
+            <p><strong>Status:</strong> <span class="status">Confirmed</span></p>
+            <a class="button" href="#">View Booking</a>
+        </div>
+
+        <a class="back-button" href="index.html">Back to Dashboard</a>
+
+    </main>
+
+    <footer>
+        <p>StudioShare - Find your space, create your vision.</p>
+    </footer>
+
+</body>
+</html>
