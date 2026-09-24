@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudioShare - Book a Time Slot</title>
+
+    <link rel="stylesheet" href="timeslot.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>StudioShare</h1>
+
+        <nav>
+            <a href="../provider/index.html">Home</a>
+            <a href="../index.html">Browse Spaces</a>
+            <a href="../provider/create-listing.html">List Your Space</a>
+            <a class="signup-button" href="signup.html">Sign Up</a>
+        </nav>
+    </header>
+
+
+    <section class="hero">
+
+        <div class="hero-text">
+            <h2>Book Your Creative Space</h2>
+
+            <p>
+                Choose a date and available time slot to reserve the space
+                that works best for you.
+            </p>
+        </div>
+
+    </section>
+
+
+                <style>     
+            .hero {
+            background-color: #123d2b;
+            color: white;
+            padding: 70px 60px;
+            background-image: url("../images/studio2.jpg");
+        }
+
+.space-image {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+}
+
+.space-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+        </style>
+
+    <main class="booking-container">
+
+        <h2>Book a Time Slot</h2>
+
+        <p class="booking-description">
+            Select your preferred date and time below.
+        </p>
+
+
+        <div class="booking-layout">
+
+            <section class="space-card">
+
+<div class="space-image">
+    <img src="../images/CreativeStudio.jpg" alt="Downtown Creative Studio">
+</div>
+                <div class="space-information">
+
+                    <h3>Downtown Creative Studio</h3>
+
+                    <p class="location">
+                        Greensboro, NC
+                    </p>
+
+                    <p>
+                        A flexible creative studio perfect for photography,
+                        art projects, music sessions, and small productions.
+                    </p>
+
+                    <div class="space-details">
+
+                        <p>
+                            <strong>Capacity:</strong>
+                            Up to 10 people
+                        </p>
+
+                        <p>
+                            <strong>Equipment:</strong>
+                            Lighting, tables, chairs, speakers
+                        </p>
+
+                        <p>
+                            <strong>Price:</strong>
+                            $45 per hour
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="booking-card">
+
+                <h3>Select Your Time</h3>
+
+                <form>
+
+                    <div class="form-group">
+
+                        <label for="booking-date">
+                            Select Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="booking-date"
+                            name="booking-date"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Available Time Slots
+                        </label>
+
+                        <div class="time-slots">
+
+                            <label class="time-option">
+                                <input
+                                    type="radio"
+                                    name="time"
+                                    value="9:00 AM"
+                                >
+
+                                <span>9:00 AM</span>
+                            </label>
+
+
+                            <label class="time-option">
+                                <input
+                                    type="radio"
+                                    name="time"
+                                    value="10:00 AM"
+                                >
+
+                                <span>10:00 AM</span>
+                            </label>
+
+
+                            <label class="time-option">
+                                <input
+                                    type="radio"
+                                    name="time"
+                                    value="11:00 AM"
+                                >
+
+                                <span>11:00 AM</span>
+                            </label>
+
+
+                            <label class="time-option">
+                                <input
+                                    type="radio"
+                                    name="time"
+                                    value="1:00 PM"
+                                >
+
+                                <span>1:00 PM</span>
+                            </label>
+
+
+                            <label class="time-option">
+                                <input
+                                    type="radio"
+                                    name="time"
+                                    value="2:00 PM"
+                                >
+
+                                <span>2:00 PM</span>
+                            </label>
+
+
+                            <label class="time-option">
+                                <input
+                                    type="radio"
+                                    name="time"
+                                    value="4:00 PM"
+                                >
+
+                                <span>4:00 PM</span>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="hours">
+                            Number of Hours
+                        </label>
+
+                        <select id="hours" name="hours">
+
+                            <option value="1">
+                                1 Hour
+                            </option>
+
+                            <option value="2">
+                                2 Hours
+                            </option>
+
+                            <option value="3">
+                                3 Hours
+                            </option>
+
+                            <option value="4">
+                                4 Hours
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="notes">
+                            Booking Notes
+                        </label>
+
+                        <textarea
+                            id="notes"
+                            name="notes"
+                            rows="4"
+                            placeholder="Tell the provider anything they should know about your booking..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="booking-summary">
+
+                        <h3>Booking Summary</h3>
+
+                        <div class="summary-row">
+                            <span>Studio Rate</span>
+                            <span>$45 / hour</span>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Service Fee</span>
+                            <span>$5</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="summary-row total">
+                            <span>Estimated Total</span>
+                            <span>$50</span>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="booking-button"
+                    >
+                        Continue Booking
+                    </button>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            StudioShare - Find your space, create your vision.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

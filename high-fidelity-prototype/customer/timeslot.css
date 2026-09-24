@@ -1,0 +1,405 @@
+/* GENERAL PAGE */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+
+/* HEADER */
+
+header {
+    background-color: white;
+    padding: 20px 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+    color: #123d2b;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #222;
+}
+
+nav a:hover {
+    color: #2f8f4e;
+}
+
+
+/* SIGN UP BUTTON */
+
+.signup-button {
+    background-color: #2f8f4e;
+    color: white;
+
+    padding: 10px 18px;
+    border-radius: 3px;
+}
+
+.signup-button:hover {
+    background-color: #267640;
+    color: white;
+}
+
+
+/* HERO */
+
+.hero {
+    background-color: #123d2b;
+    color: white;
+
+    padding: 60px 60px;
+}
+
+.hero-text {
+    max-width: 750px;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* MAIN BOOKING SECTION */
+
+.booking-container {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 50px 40px;
+}
+
+.booking-container > h2 {
+    text-align: center;
+
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.booking-description {
+    text-align: center;
+    color: #666;
+
+    margin-bottom: 40px;
+}
+
+
+/* TWO COLUMN LAYOUT */
+
+.booking-layout {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 35px;
+}
+
+
+/* SPACE INFORMATION CARD */
+
+.space-card {
+    background-color: white;
+
+    width: 50%;
+
+    border: 1px solid #ddd;
+}
+
+.space-image {
+    width: 100%;
+    height: 260px;
+
+    background-color: #e5e5e5;
+}
+
+.image-placeholder {
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #777;
+    font-size: 20px;
+}
+
+.space-information {
+    padding: 25px;
+}
+
+.space-information h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+
+    font-size: 24px;
+}
+
+.location {
+    color: #2f8f4e;
+    font-weight: bold;
+}
+
+.space-information p {
+    line-height: 1.6;
+}
+
+.space-details {
+    background-color: #f5f5f5;
+
+    margin-top: 20px;
+    padding: 15px;
+}
+
+.space-details p {
+    margin: 8px 0;
+}
+
+
+/* BOOKING CARD */
+
+.booking-card {
+    background-color: white;
+
+    width: 50%;
+
+    border: 1px solid #ddd;
+    padding: 30px;
+}
+
+.booking-card h3 {
+    margin-top: 0;
+
+    font-size: 23px;
+}
+
+
+/* FORM */
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group > label {
+    display: block;
+
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 3px;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+/* TIME SLOT BUTTONS */
+
+.time-slots {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+
+/* Hide radio circle */
+
+.time-option input {
+    display: none;
+}
+
+
+/* Time slot appearance */
+
+.time-option span {
+    display: block;
+
+    text-align: center;
+
+    border: 1px solid #2f8f4e;
+
+    padding: 12px 5px;
+
+    cursor: pointer;
+
+    border-radius: 3px;
+
+    color: #2f8f4e;
+
+    transition: 0.2s;
+}
+
+
+/* Hover effect */
+
+.time-option span:hover {
+    background-color: #eaf4ed;
+}
+
+
+/* Selected time */
+
+.time-option input:checked + span {
+    background-color: #2f8f4e;
+    color: white;
+}
+
+
+/* BOOKING SUMMARY */
+
+.booking-summary {
+    background-color: #f5f5f5;
+
+    padding: 20px;
+
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.booking-summary h3 {
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 10px 0;
+}
+
+.booking-summary hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+
+    margin: 15px 0;
+}
+
+.total {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+
+/* BOOKING BUTTON */
+
+.booking-button {
+    width: 100%;
+
+    background-color: #2f8f4e;
+    color: white;
+
+    border: none;
+    border-radius: 3px;
+
+    padding: 14px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.booking-button:hover {
+    background-color: #267640;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #123d2b;
+
+    color: white;
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 50px;
+}
+
+
+/* SMALLER SCREENS */
+
+@media (max-width: 850px) {
+
+    header {
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 45px 30px;
+    }
+
+    .booking-layout {
+        flex-direction: column;
+    }
+
+    .space-card,
+    .booking-card {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .time-slots {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .booking-container {
+        padding: 35px 20px;
+    }
+
+}

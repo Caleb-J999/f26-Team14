@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudioShare - Search Spaces</title>
+
+    <link rel="stylesheet" href="spaces.css">
+</head>
+
+<body>
+
+    <header>
+
+        <h1>StudioShare</h1>
+
+        <nav>
+            <a href="../provider/index.html">Home</a>
+            <a href="search-spaces.html">Browse Spaces</a>
+            <a href="../provider/create-listing.html">List Your Space</a>
+            <a class="signup-button" href="signup.html">Sign Up</a>
+        </nav>
+
+    </header>
+
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h2>Find Your Creative Space</h2>
+
+            <p>
+                Search studios, rehearsal rooms, maker spaces, and other
+                creative spaces available near you.
+            </p>
+
+        </div>
+
+    </section>
+        <style>     
+            .hero {
+            background-color: #123d2b;
+            color: white;
+            padding: 70px 60px;
+            background-image: url("../images/studio2.jpg");
+        }
+
+        .space-image {
+    height: 220px;
+    overflow: hidden;
+}
+
+.space-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+        </style>
+    
+
+    <main class="search-container">
+
+        <section class="search-box">
+
+            <h2>Search Spaces</h2>
+
+            <div class="search-fields">
+
+                <div class="search-field">
+
+                    <label for="location">
+                        Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="location"
+                        placeholder="Enter city or location"
+                    >
+
+                </div>
+
+
+                <div class="search-field">
+
+                    <label for="space-type">
+                        Space Type
+                    </label>
+
+                    <select id="space-type">
+
+                        <option value="">
+                            All Space Types
+                        </option>
+
+                        <option value="studio">
+                            Photography Studio
+                        </option>
+
+                        <option value="music">
+                            Music / Rehearsal Room
+                        </option>
+
+                        <option value="maker">
+                            Maker Space
+                        </option>
+
+                        <option value="art">
+                            Art Studio
+                        </option>
+
+                        <option value="event">
+                            Event Space
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="search-field">
+
+                    <label for="date">
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="date"
+                    >
+
+                </div>
+
+
+                <div class="search-button-container">
+
+                    <button class="search-button">
+                        Search Spaces
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="results-heading">
+
+            <div>
+                <h2>Available Spaces</h2>
+
+                <p>
+                    Explore creative spaces that match your search.
+                </p>
+            </div>
+
+
+            <div class="sort-area">
+
+                <label for="sort">
+                    Sort By
+                </label>
+
+                <select id="sort">
+
+                    <option>
+                        Recommended
+                    </option>
+
+                    <option>
+                        Price: Low to High
+                    </option>
+
+                    <option>
+                        Price: High to Low
+                    </option>
+
+                    <option>
+                        Highest Rated
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <section class="space-grid">
+
+
+            <div class="space-card">
+
+                <div class="space-image">
+                <img src="../images/CreativeStudio.jpg" alt="Creative studio">
+                </div>
+
+                <div class="space-info">
+
+                    <h3>Downtown Creative Studio</h3>
+
+                    <p class="location">
+                        Greensboro, NC
+                    </p>
+
+                    <p>
+                        Flexible studio space for photography,
+                        content creation, and art projects.
+                    </p>
+
+
+                    <div class="features">
+
+                        <span>Lighting</span>
+                        <span>Wi-Fi</span>
+                        <span>10 Guests</span>
+
+                    </div>
+
+
+                    <div class="card-bottom">
+
+                        <div>
+
+                            <strong>$45</strong>
+                            <span>/ hour</span>
+
+                        </div>
+
+                        <a
+                            href="check-availability.html"
+                            class="view-button"
+                        >
+                            View Space
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="space-card">
+
+                <div class="space-image">
+                <img src="../images/RehersalStudio.jpg" alt="Creative studio">
+                </div>
+
+                <div class="space-info">
+
+                    <h3>Green Room Rehearsal Studio</h3>
+
+                    <p class="location">
+                        Greensboro, NC
+                    </p>
+
+                    <p>
+                        Private rehearsal space for bands,
+                        musicians, and small performances.
+                    </p>
+
+
+                    <div class="features">
+
+                        <span>Speakers</span>
+                        <span>Microphones</span>
+                        <span>8 Guests</span>
+
+                    </div>
+
+
+                    <div class="card-bottom">
+
+                        <div>
+
+                            <strong>$35</strong>
+                            <span>/ hour</span>
+
+                        </div>
+
+                        <a
+                            href="check-availability.html"
+                            class="view-button"
+                        >
+                            View Space
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="space-card">
+
+                <div class="space-image">
+                <img src="../images/MakerSpace.jpg" alt="Creative studio">
+                </div>
+
+                <div class="space-info">
+
+                    <h3>Community Maker Space</h3>
+
+                    <p class="location">
+                        Greensboro, NC
+                    </p>
+
+                    <p>
+                        Open workspace with tables, tools,
+                        and equipment for hands-on projects.
+                    </p>
+
+
+                    <div class="features">
+
+                        <span>Tools</span>
+                        <span>Work Tables</span>
+                        <span>12 Guests</span>
+
+                    </div>
+
+
+                    <div class="card-bottom">
+
+                        <div>
+
+                            <strong>$30</strong>
+                            <span>/ hour</span>
+
+                        </div>
+
+                        <a
+                            href="check-availability.html"
+                            class="view-button"
+                        >
+                            View Space
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="space-card">
+
+                <div class="space-image">
+                <img src="../images/OpenCanvas.jpg.jpg" alt="Creative studio">
+                </div>
+
+                <div class="space-info">
+
+                    <h3>Open Canvas Art Studio</h3>
+
+                    <p class="location">
+                        High Point, NC
+                    </p>
+
+                    <p>
+                        Bright art studio with open floor space
+                        for painting and creative workshops.
+                    </p>
+
+
+                    <div class="features">
+
+                        <span>Easels</span>
+                        <span>Natural Light</span>
+                        <span>15 Guests</span>
+
+                    </div>
+
+
+                    <div class="card-bottom">
+
+                        <div>
+
+                            <strong>$40</strong>
+                            <span>/ hour</span>
+
+                        </div>
+
+                        <a
+                            href="check-availability.html"
+                            class="view-button"
+                        >
+                            View Space
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            StudioShare - Find your space, create your vision.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
