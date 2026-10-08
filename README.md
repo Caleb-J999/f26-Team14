@@ -18,6 +18,7 @@
    2. View available spaces - Users can browse available creative spaces.
    3. Book available time slots - Users can check availability and reserve a time slot.
    4. View/manage bookings - Users can view and manage their reservations.
+   5. Write reviews for bookings - Users can create reviews for listings/bookings they choose.
 
 2. Provider/Space Owner:
    1. Create/modify provider profile - Space owners can manage their provider account.
