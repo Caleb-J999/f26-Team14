@@ -38,6 +38,48 @@
 
 ## 2. Functional Requirements (User Stories)
 
+### 2.1 Customer Stories
+
+- **US-1 — Search for Creative Spaces**  
+  *Story:* As a customer, I want to search for available creative spaces so that I can find a space that meets my needs.  
+  *Acceptance:*
+
+      Scenario: Customer searches for a creative space
+        Given the customer is on the StudioShare search page
+        When the customer enters their desired location, date, and type of space
+        Then the system displays available spaces that match the customer's search criteria
+
+
+- **US-2 — Book a Time Slot**  
+  *Story:* As a customer, I want to book an available time slot so that I can reserve a creative space for a specific date and time.  
+  *Acceptance:*
+
+      Scenario: Customer books an available space
+        Given the customer has selected a space with an available time slot
+        When the customer selects the date and time and confirms the booking
+        Then the system creates the reservation and displays a booking confirmation
+
+- **US-3 — View My Bookings**  
+  *Story:* As a customer, I want to view my current and past bookings so that I can keep track of the spaces I have reserved.  
+  *Acceptance:*
+
+      Scenario: Customer views booking history
+        Given the customer is logged into their account
+        When the customer opens the bookings section
+        Then the system displays their upcoming and previous reservations                
+
+
+- **US-4 — View Reviews**  
+  *Story:* As a customer, I want to read reviews from previous customers so that I can make a more informed decision before booking a space.  
+  *Acceptance:*
+
+      Scenario: Customer views reviews
+        Given the customer is viewing a creative space listing
+        When the customer opens the reviews section
+        Then the system displays ratings and reviews submitted by previous customers
+
+
+
 ### 2.2 Provider Stories
 
 - **US-1 — Earn income from creative spaces**  
@@ -84,6 +126,31 @@
 
 ---
 
+## 4. Assumptions, Constraints, and Policies
+
+### Assumptions
+- Customers and providers have access to the internet and a device capable of using StudioShare.
+- Users will provide accurate and up-to-date account and contact information.
+- Providers are responsible for keeping their space availability, pricing, equipment lists, and images accurate.
+- Customers are expected to follow the rules established by the provider when using a booked space.
+- Providers are assumed to have the legal right to rent or list the spaces they post on StudioShare.
+
+### Constraints
+- A space can only be booked during time slots marked as available by the provider.
+- Two customers cannot reserve the same space for overlapping time periods.
+- Users must create an account and log in before making or managing a reservation.
+- StudioShare depends on internet connectivity and may not function properly without an active connection.
+- Payment, insurance, and other third-party services may depend on external service providers.
+
+### Policies
+- Customers must follow cancellation and refund policies associated with their reservations.
+- Providers must accurately describe their spaces, equipment, pricing, and availability.
+- Reviews should only be submitted by customers who have completed a booking for that space.
+- Users may not submit false, abusive, or misleading reviews or listings.
+- Personal information must be handled according to StudioShare's privacy and security policies.
+- Customers may be responsible for damage caused to a space or its equipment during their reservation.
+
+
 ## 5. Milestones (course-aligned)
 
 - **M1 Requirements** — This SRS document and user stories opend as issues
@@ -92,5 +159,14 @@
 - **M4 Backend API** — Key endpoints and tests.
 - **M5 Increment** — At least two use cases completed end-to-end.
 - **M6 Final** — Complete system and documentation.
+
+
+## 6. Change Management
+
+- Changes to requirements, features, or user stories should be tracked through GitHub issues.
+- Significant changes should be reviewed by the team before being added to the main version of the SRS.
+- When a feature is added, removed, or significantly changed, the corresponding user stories, requirements, and acceptance criteria should also be updated.
+- Major changes to StudioShare's scope, such as adding new user roles or major features, should result in an updated version of this SRS.
+- Git commit history and pull requests will be used to maintain a record of changes made to the project documentation.
 
 ---
