@@ -69,4 +69,9 @@ public class BookingService {
 
         return true;
     }
+
+    // Get bookings by customer
+    public List<Booking> getBookingsByCustomer(Long customerId) {
+        return repository.findByCustomerId(customerId);
+    }
 }
