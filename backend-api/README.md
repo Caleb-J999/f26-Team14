@@ -211,3 +211,68 @@ Returns bookings associated with the specified customer. An empty array is retur
 #### Cancel Booking — DELETE /api/bookings/{id}
 
 Changes the booking status to CANCELLED while retaining the booking in the customer's history.
+
+
+
+## UML Class Diagram
+
+The following diagram shows the main entities and relationships in the Studio Share backend.
+
+```mermaid
+classDiagram
+    class Customer {
+        -Long customerId
+        -String firstName
+        -String lastName
+        -String email
+        -String phone
+        -String profileImageUrl
+        -LocalDateTime createdAt
+        -LocalDateTime updatedAt
+    }
+
+    class Provider {
+        -Long providerId
+        -String firstName
+        -String lastName
+        -String email
+        -String phone
+        -String bio
+        -String profileImageUrl
+        -Boolean isActive
+        -LocalDateTime createdAt
+        -LocalDateTime updatedAt
+    }
+
+    class Service {
+        -Long serviceId
+        -Provider provider
+        -String title
+        -String description
+        -String location
+        -BigDecimal pricePerHour
+        -Integer capacity
+        -String imageUrl
+        -Boolean isActive
+        -LocalDateTime createdAt
+        -LocalDateTime updatedAt
+    }
+
+    class Booking {
+        -Long bookingId
+        -Service service
+        -Provider provider
+        -Long customerId
+        -LocalDateTime startTime
+        -LocalDateTime endTime
+        -String status
+        -BigDecimal totalPrice
+        -LocalDateTime createdAt
+        -LocalDateTime updatedAt
+    }
+
+    Provider "1" --> "0..*" Service : owns
+    Provider "1" --> "0..*" Booking : receives
+    Service "1" --> "0..*" Booking : booked through
+    Customer "1" ..> "0..*" Booking : customerId reference
+```
