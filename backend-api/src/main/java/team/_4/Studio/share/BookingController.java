@@ -1,13 +1,20 @@
-
 package team._4.Studio.share;
 
 import java.util.List;
 
-import jakarta.validation.Valid;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/bookings")
@@ -19,11 +26,17 @@ public class BookingController {
         this.service = service;
     }
 
-    // Get all bookings or filter by provider or service
+    // Get all bookings or filter by customer, provider, or service
     @GetMapping
     public ResponseEntity<List<Booking>> getAllBookings(
+            @RequestParam(required = false) Long customerId,
             @RequestParam(required = false) Long providerId,
             @RequestParam(required = false) Long serviceId) {
+
+        if (customerId != null) {
+            return ResponseEntity.ok(
+                    service.getBookingsByCustomer(customerId));
+        }
 
         if (providerId != null) {
             return ResponseEntity.ok(
