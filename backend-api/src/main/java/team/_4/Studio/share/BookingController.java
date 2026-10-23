@@ -3,6 +3,9 @@ package team._4.Studio.share;
 
 import java.util.List;
 
+import jakarta.validation.Valid;
+
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +19,7 @@ public class BookingController {
         this.service = service;
     }
 
+    // Get all bookings or filter by provider or service
     @GetMapping
     public ResponseEntity<List<Booking>> getAllBookings(
             @RequestParam(required = false) Long providerId,
@@ -34,6 +38,7 @@ public class BookingController {
         return ResponseEntity.ok(service.getAllBookings());
     }
 
+    // Get booking by ID
     @GetMapping("/{id}")
     public ResponseEntity<Booking> getBookingById(
             @PathVariable Long id) {
@@ -43,6 +48,18 @@ public class BookingController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    // Create a new booking
+    @PostMapping
+    public ResponseEntity<Booking> createBooking(
+            @Valid @RequestBody Booking booking) {
+
+        Booking savedBooking = service.createBooking(booking);
+
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(savedBooking);
+    }
+
+    // Update booking status
     @PutMapping("/{id}/status")
     public ResponseEntity<Booking> updateBookingStatus(
             @PathVariable Long id,
@@ -53,6 +70,7 @@ public class BookingController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    // Cancel a booking
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> cancelBooking(
             @PathVariable Long id) {
