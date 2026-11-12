@@ -114,4 +114,16 @@ footer {
     padding: 24px;
     text-align: center;
     background: #e5ece7;
+
+}
+
+.space-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.space-grid .card {
+    margin-bottom: 0;
+    overflow-wrap: anywhere;
 }
