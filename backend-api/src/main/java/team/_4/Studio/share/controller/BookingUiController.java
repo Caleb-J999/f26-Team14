@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import team._4.Studio.share.Booking;
 import team._4.Studio.share.BookingService;
 import team._4.Studio.share.Service;
@@ -35,7 +37,15 @@ public class BookingUiController {
     public String bookingForm(
             @PathVariable("id") String id,
             Model model,
-            HttpServletResponse response) {
+            HttpServletResponse response,
+            HttpServletRequest request) {
+
+        HttpSession session = request.getSession(false);
+
+        if (session == null
+                || !(session.getAttribute("customerId") instanceof Long)) {
+            return "redirect:/login";
+        }
 
         Service space = findActiveSpace(id);
 
@@ -54,16 +64,23 @@ public class BookingUiController {
     @PostMapping("/spaces/{id}/book")
     public String submitBooking(
             @PathVariable("id") String id,
-            @RequestParam(name = "customerId", defaultValue = "")
-                    String customerId,
             @RequestParam(name = "startTime", defaultValue = "")
                     String startTime,
             @RequestParam(name = "endTime", defaultValue = "")
                     String endTime,
             Model model,
             HttpServletResponse response,
-            RedirectAttributes redirectAttributes) {
+            RedirectAttributes redirectAttributes,
+            HttpServletRequest request) {
 
+        HttpSession session = request.getSession(false);
+
+        if (session == null
+                || !(session.getAttribute("customerId") instanceof Long)) {
+            return "redirect:/login";
+        }
+
+        Long customerId = (Long) session.getAttribute("customerId");
         Service space = findActiveSpace(id);
 
         if (space == null) {
@@ -75,14 +92,13 @@ public class BookingUiController {
         }
 
         model.addAttribute("space", space);
-        model.addAttribute("customerId", customerId);
         model.addAttribute("startTime", startTime);
         model.addAttribute("endTime", endTime);
 
         try {
             Booking booking = bookingService.createCustomerBooking(
                     space.getServiceId(),
-                    Long.valueOf(customerId.trim()),
+                    customerId,
                     LocalDateTime.parse(startTime),
                     LocalDateTime.parse(endTime));
 
@@ -93,11 +109,6 @@ public class BookingUiController {
                             + booking.getTotalPrice().toPlainString());
 
             return "redirect:/spaces/" + space.getServiceId() + "/book";
-
-        } catch (NumberFormatException exception) {
-            model.addAttribute(
-                    "errorMessage",
-                    "Enter a valid numeric customer ID.");
 
         } catch (DateTimeParseException exception) {
             model.addAttribute(

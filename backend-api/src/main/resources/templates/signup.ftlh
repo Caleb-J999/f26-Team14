@@ -72,7 +72,31 @@
                 autocomplete="tel"
             >
 
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                minlength="8"
+                autocomplete="new-password"
+                aria-describedby="password-help"
+                required
+            >
+            <p id="password-help">Use at least 8 characters.</p>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                minlength="8"
+                autocomplete="new-password"
+                required
+            >
+
             <button type="submit">Register</button>
         </form>
+
+        <p>Already registered? <a href="/login">Log In</a>.</p>
     </section>
 </@layout.page>

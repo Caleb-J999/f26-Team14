@@ -10,6 +10,7 @@
         <h2>Choose Your Booking Time</h2>
 
         <p>${space.description}</p>
+
         <p>
             <strong>Hourly Rate:</strong>
             $${space.pricePerHour?string["0.00"]}
@@ -28,17 +29,6 @@
         </#if>
 
         <form action="/spaces/${space.serviceId?c}/book" method="post">
-            <label for="customerId">Customer ID</label>
-            <input
-                type="number"
-                id="customerId"
-                name="customerId"
-                min="1"
-                step="1"
-                value="${customerId!''}"
-                required
-            >
-
             <label for="startTime">Start Date and Time</label>
             <input
                 type="datetime-local"
@@ -65,6 +55,6 @@
             <button type="submit">Submit Booking</button>
         </form>
 
-        <a href="/spaces">Back to Browse Spaces</a>
+        <p><a href="/spaces">Back to Browse Spaces</a></p>
     </section>
 </@layout.page>

@@ -15,6 +15,7 @@
             <a href="/">Home</a>
             <a href="/spaces">Browse Spaces</a>
             <a href="/signup">Sign Up</a>
+            <a href="/login">Log In</a>
         </nav>
     </header>
 
