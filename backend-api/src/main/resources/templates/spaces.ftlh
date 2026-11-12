@@ -49,6 +49,10 @@
                         ${space.capacity?c} guests
                     </p>
                 </#if>
+
+                <a class="button" href="/spaces/${space.serviceId?c}/book">
+                    Book This Space
+                </a>
             </article>
         <#else>
             <div class="card">
