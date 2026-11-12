@@ -2,6 +2,8 @@ package team._4.Studio.share.entity;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,6 +37,9 @@ public class Customer {
     private String email;
 
     private String phone;
+
+    @JsonIgnore
+    private String passwordHash;
 
     private String profileImageUrl;
 
@@ -110,4 +115,12 @@ public class Customer {
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
+
+    public String getPasswordHash() {
+    return passwordHash;
+}
+
+public void setPasswordHash(String passwordHash) {
+    this.passwordHash = passwordHash;
+}
 }
