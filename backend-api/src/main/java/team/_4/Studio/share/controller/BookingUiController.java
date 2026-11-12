@@ -1,7 +1,10 @@
 package team._4.Studio.share.controller;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +28,9 @@ public class BookingUiController {
     private final BookingService bookingService;
     private final StudioListingService studioListingService;
 
+    private static final DateTimeFormatter DISPLAY_TIME =
+            DateTimeFormatter.ofPattern("MMM d, yyyy 'at' h:mm a");
+
     public BookingUiController(
             BookingService bookingService,
             StudioListingService studioListingService) {
@@ -40,24 +46,17 @@ public class BookingUiController {
             HttpServletResponse response,
             HttpServletRequest request) {
 
-        HttpSession session = request.getSession(false);
-
-        if (session == null
-                || !(session.getAttribute("customerId") instanceof Long)) {
+        if (getCustomerId(request) == null) {
             return "redirect:/login";
         }
 
         Service space = findActiveSpace(id);
 
         if (space == null) {
-            response.setStatus(404);
-            model.addAttribute(
-                    "errorMessage",
-                    "This space was not found or is no longer available.");
-            return "customer-error";
+            return spaceNotFound(model, response);
         }
 
-        model.addAttribute("space", space);
+        populateBookingPage(space, model);
         return "book-space";
     }
 
@@ -73,25 +72,19 @@ public class BookingUiController {
             RedirectAttributes redirectAttributes,
             HttpServletRequest request) {
 
-        HttpSession session = request.getSession(false);
+        Long customerId = getCustomerId(request);
 
-        if (session == null
-                || !(session.getAttribute("customerId") instanceof Long)) {
+        if (customerId == null) {
             return "redirect:/login";
         }
 
-        Long customerId = (Long) session.getAttribute("customerId");
         Service space = findActiveSpace(id);
 
         if (space == null) {
-            response.setStatus(404);
-            model.addAttribute(
-                    "errorMessage",
-                    "This space was not found or is no longer available.");
-            return "customer-error";
+            return spaceNotFound(model, response);
         }
 
-        model.addAttribute("space", space);
+        populateBookingPage(space, model);
         model.addAttribute("startTime", startTime);
         model.addAttribute("endTime", endTime);
 
@@ -120,6 +113,45 @@ public class BookingUiController {
         }
 
         return "book-space";
+    }
+
+    private void populateBookingPage(Service space, Model model) {
+        LocalDateTime now = LocalDateTime.now();
+
+        List<Map<String, String>> windows = bookingService
+                .getAvailabilityByService(space.getServiceId())
+                .stream()
+                .filter(window -> window.getEndTime().isAfter(now))
+                .map(window -> Map.of(
+                        "start", window.getStartTime().format(DISPLAY_TIME),
+                        "end", window.getEndTime().format(DISPLAY_TIME)))
+                .toList();
+
+        model.addAttribute("space", space);
+        model.addAttribute("availabilityWindows", windows);
+    }
+
+    private Long getCustomerId(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+
+        if (session != null
+                && session.getAttribute("customerId") instanceof Long id) {
+            return id;
+        }
+
+        return null;
+    }
+
+    private String spaceNotFound(
+            Model model,
+            HttpServletResponse response) {
+
+        response.setStatus(404);
+        model.addAttribute(
+                "errorMessage",
+                "This space was not found or is no longer available.");
+
+        return "customer-error";
     }
 
     private Service findActiveSpace(String id) {

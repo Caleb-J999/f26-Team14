@@ -7,7 +7,7 @@
     </section>
 
     <section class="card">
-        <h2>Choose Your Booking Time</h2>
+        <h2>Offered Availability</h2>
 
         <p>${space.description}</p>
 
@@ -28,33 +28,50 @@
             </div>
         </#if>
 
-        <form action="/spaces/${space.serviceId?c}/book" method="post">
-            <label for="startTime">Start Date and Time</label>
-            <input
-                type="datetime-local"
-                id="startTime"
-                name="startTime"
-                value="${startTime!''}"
-                required
-            >
-
-            <label for="endTime">End Date and Time</label>
-            <input
-                type="datetime-local"
-                id="endTime"
-                name="endTime"
-                value="${endTime!''}"
-                required
-            >
+        <#if availabilityWindows?has_content>
+            <ul>
+                <#list availabilityWindows as window>
+                    <li>${window.start} through ${window.end}</li>
+                </#list>
+            </ul>
 
             <p>
-                The total is calculated from the hourly rate and
-                booking duration. Times use the studio's local time.
+                Choose a future time entirely within one offered window.
+                Existing reservations are checked when you submit.
+                Times use the studio's local time.
             </p>
 
-            <button type="submit">Submit Booking</button>
-        </form>
+            <form action="/spaces/${space.serviceId?c}/book" method="post">
+                <label for="startTime">Start Date and Time</label>
+                <input
+                    type="datetime-local"
+                    id="startTime"
+                    name="startTime"
+                    value="${startTime!''}"
+                    required
+                >
 
+                <label for="endTime">End Date and Time</label>
+                <input
+                    type="datetime-local"
+                    id="endTime"
+                    name="endTime"
+                    value="${endTime!''}"
+                    required
+                >
+
+                <p>
+                    Your total is calculated from the hourly rate
+                    and booking duration.
+                </p>
+
+                <button type="submit">Submit Booking</button>
+            </form>
+        <#else>
+            <p>No upcoming availability has been offered for this space.</p>
+        </#if>
+
+        <p><a href="/my-bookings">View My Bookings</a></p>
         <p><a href="/spaces">Back to Browse Spaces</a></p>
     </section>
 </@layout.page>
