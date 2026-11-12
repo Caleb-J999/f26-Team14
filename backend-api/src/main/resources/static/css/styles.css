@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7f5;
+    color: #24352b;
+}
+
+header {
+    background: #123d2b;
+    color: white;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    min-height: 65vh;
+}
+
+.hero {
+    background: #123d2b;
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+}
+
+.card {
+    background: white;
+    padding: 28px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    border: 1px solid #dce5df;
+}
+
+label {
+    display: block;
+    margin: 16px 0 6px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #aab8af;
+    border-radius: 5px;
+    font: inherit;
+}
+
+button,
+.button {
+    display: inline-block;
+    background: #17643e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    margin-top: 16px;
+    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+    background: #123d2b;
+}
+
+.error {
+    background: #fde8e8;
+    color: #8a1717;
+    padding: 16px;
+    border-radius: 5px;
+}
+
+.success {
+    background: #e2f3e7;
+    color: #18552e;
+    padding: 16px;
+    border-radius: 5px;
+}
+
+footer {
+    padding: 24px;
+    text-align: center;
+    background: #e5ece7;
+}
