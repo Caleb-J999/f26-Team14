@@ -11,9 +11,11 @@
 <body>
     <header>
         <h1>StudioShare</h1>
+
         <nav aria-label="Main navigation">
             <a href="/">Home</a>
             <a href="/spaces">Browse Spaces</a>
+            <a href="/my-bookings">My Bookings</a>
             <a href="/signup">Sign Up</a>
             <a href="/login">Log In</a>
         </nav>
@@ -25,6 +27,10 @@
 
     <footer>
         <p>StudioShare - Find your space, create your vision.</p>
+
+        <form action="/logout" method="post">
+            <button type="submit">Log Out</button>
+        </form>
     </footer>
 </body>
 </html>
